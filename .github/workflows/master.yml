@@ -16,3 +16,4 @@ jobs:
   - name: Deploy
     run: |
      curl -X POST --data "environment=$LIVE_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
+     
