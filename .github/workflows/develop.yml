@@ -6,7 +6,7 @@ name: Divio Test environment Deployment
 env:
   API_TOKEN: ${{ secrets.API_TOKEN }}
   TEST_ENVIRONMENT_ID: ${{ secrets.TEST_ENVIRONMENT_ID }}  
-
+  TEST_DEPLOYMENT_ID: ${{ secrets.TEST_DEPLOYMENT_ID }}  
 on:
  push:
   branches: [ develop ]
@@ -25,4 +25,7 @@ jobs:
   - name: Deploy
     run: |
      curl -X POST --data "environment=$TEST_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
-
+  
+  - name: Deployment status check
+    run: | 
+      curl https://api.divio.com/apps/v3/deployments/$TEST_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
