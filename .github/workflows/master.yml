@@ -25,7 +25,7 @@ jobs:
   - uses: actions/checkout@v1
   - name: Wait for deployment to complete
     run: | 
-      echo "PATH"
+      echo "Hi Moses"
       PATH/testlive.sh
       shell:bash
       with:
