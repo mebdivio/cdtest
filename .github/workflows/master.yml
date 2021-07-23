@@ -24,12 +24,13 @@ jobs:
   
   # - uses: actions/checkout@v1
   - name: Wait for deployment to complete
-    uses: mebdivio/github-actions-sbt@master
-    with:
-      args: test
+    # uses: mebdivio/github-actions-sbt@master
+    # with:
+    #   args: test
     working-directory: ./cdtest
     run: | 
        testlive.sh
+       
   - name: Deployment status check
     run: | 
       curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
