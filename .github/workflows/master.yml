@@ -27,7 +27,7 @@ jobs:
     run: | 
       PATH/testlive.sh
       shell:bash
-    # with:
+      with:
     #   password: ${{ secrets.API_TOKEN }}
 
   - name: Deployment status check
