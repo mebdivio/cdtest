@@ -27,6 +27,7 @@ jobs:
     # uses: mebdivio/github-actions-sbt@master
     # working-directory: ./cdtest
     run: | 
+       chmod +x "$./testlive.sh"
        ./testlive.sh
 
   - name: Deployment status check
