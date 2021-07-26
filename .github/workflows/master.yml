@@ -27,10 +27,10 @@ jobs:
     # uses: mebdivio/github-actions-sbt@master
     # with:
     #   args: test
-    working-directory: ./cdtest
+    # working-directory: ./cdtest
     run: | 
-        chmod +x "${GITHUB_WORKSPACE}/.github/testlive.sh"
-        bash testlive
+        # chmod +x "${GITHUB_WORKSPACE}/.github/testlive.sh"
+       ./testlive.sh
 
   - name: Deployment status check
     run: | 
