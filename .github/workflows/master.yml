@@ -29,8 +29,9 @@ jobs:
     #   args: test
     working-directory: ./cdtest
     run: | 
-       testlive.sh
-       
+        chmod +x "${GITHUB_WORKSPACE}/.github/testlive.sh"
+        bash testlive
+
   - name: Deployment status check
     run: | 
       curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
