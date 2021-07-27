@@ -18,19 +18,20 @@ jobs:
     run: |
      curl -X POST --data "environment=$LIVE_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
      
-  # - name: Deployment status check
-  #   run: | 
-  #     curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
+  - name: Deployment status check
+    run: | 
+       ./testlive.sh
+      # curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
   
   # - uses: actions/checkout@v1
   
-  - name: Wait for deployment to complete
+  # - name: Wait for deployment to complete
     # uses: mebdivio/github-actions-sbt@master
     # working-directory: ./cdtest
-    run: | 
-       chmod +x "${GITHUB_WORKSPACE}/.github/workflow/testlive.sh"
-       ./testlive.sh
+  #   run: | 
+  #      chmod +x "${GITHUB_WORKSPACE}/.github/workflow/testlive.sh"
+  #      ./testlive.sh
 
-  - name: Deployment status check
-    run: | 
-      curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
+  # - name: Deployment status check
+  #   run: | 
+  #     curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
