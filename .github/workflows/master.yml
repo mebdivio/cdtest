@@ -21,7 +21,7 @@ jobs:
   - name: Deployment status check
     run: | 
       pwd
-      chmod +x "${GITHUB_WORKSPACE}/.github/workflow/testlive.sh"
+      chmod +x "${GITHUB_WORKSPACE}/testlive.sh"
       ./testlive.sh
       # curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
   
