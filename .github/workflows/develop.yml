@@ -27,7 +27,7 @@ jobs:
      curl -X POST --data "environment=$TEST_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
   
  - uses: actions/checkout@v1
-  - name: Wait for deployment to complete
+ - name: Wait for deployment to complete
     run: | 
       PATH/test.sh
       shell:bash
