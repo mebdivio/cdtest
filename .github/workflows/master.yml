@@ -18,7 +18,7 @@ jobs:
     run: |
      curl -X POST --data "environment=$LIVE_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
      
-  - uses: actions/checkout@v1
+  # - uses: actions/checkout@v1
   - name: Deployment status check
     run: | 
       chmod +x "${GITHUB_WORKSPACE}/testlive.sh"
