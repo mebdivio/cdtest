@@ -25,15 +25,5 @@ jobs:
       ./testlive.sh
       # curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
   
-  # - uses: actions/checkout@v1
-  
-  # - name: Wait for deployment to complete
     # uses: mebdivio/github-actions-sbt@master
     # working-directory: ./cdtest
-  #   run: | 
-  #      chmod +x "${GITHUB_WORKSPACE}/.github/workflow/testlive.sh"
-  #      ./testlive.sh
-
-  # - name: Deployment status check
-  #   run: | 
-  #     curl https://api.divio.com/apps/v3/deployments/$LIVE_DEPLOYMENT_ID/ -H "Authorization: Token $API_TOKEN"
